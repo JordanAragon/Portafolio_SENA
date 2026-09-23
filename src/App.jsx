@@ -3,6 +3,7 @@ import Hero from "./layouts/Hero";
 import BentoAbout from "./layouts/BentoAbout";
 import WorkExperience from "./layouts/WorkExperience";
 import Footer from "./layouts/Footer";
+import ProjectItem from "./components/ProjectItem";
 
 const projects = [
   {
@@ -24,7 +25,7 @@ const projects = [
     context:
       "Infraestructura personal para centralizar archivos y música, con servicios desplegados sobre un servidor Ubuntu y acceso remoto seguro.",
     solution:
-      "Una base sencilla de servicios con Docker, Nextcloud, Navidrome y Tailscale, pensada para aprender infraestructura mientras se resuelven necesidades reales.",
+      "Una base de servicios con Docker, Nextcloud, Navidrome y Tailscale, pensada para aprender infraestructura mientras se resuelven necesidades reales.",
     tags: ["Ubuntu", "Docker", "Tailscale"],
     visualTitle: "Servidor → Servicios → Acceso",
     visualItems: ["Ubuntu Server", "Docker", "Nextcloud", "Navidrome"],
@@ -42,56 +43,6 @@ const projects = [
     visualItems: ["Equipos", "Periféricos", "Inventario", "Reportes"],
   },
 ];
-
-function ProjectVisual({ title, items }) {
-  return (
-    <figure className="project-visual" aria-label={title}>
-      <figcaption>{title}</figcaption>
-      <ol className="architecture-list">
-        {items.map((item, index) => (
-          <li key={item}>
-            <span className="architecture-index">{String(index + 1).padStart(2, "0")}</span>
-            <span>{item}</span>
-          </li>
-        ))}
-      </ol>
-    </figure>
-  );
-}
-
-function ProjectItem({ project }) {
-  return (
-    <article className="project-item">
-      <ProjectVisual title={project.visualTitle} items={project.visualItems} />
-      <section className="project-copy" aria-labelledby={`project-${project.number}`}>
-        <p className="eyebrow">{project.number} / Proyecto</p>
-        <h3 id={`project-${project.number}`} className="project-title">
-          {project.title}
-        </h3>
-        <p className="project-category">{project.category}</p>
-
-        <dl className="project-details">
-          <div>
-            <dt>Contexto</dt>
-            <dd>{project.context}</dd>
-          </div>
-          <div>
-            <dt>Qué hice</dt>
-            <dd>{project.solution}</dd>
-          </div>
-        </dl>
-
-        <ul className="tag-list" aria-label="Tecnologías o áreas">
-          {project.tags.map((tag) => (
-            <li key={tag}>
-              <span className="tag">{tag}</span>
-            </li>
-          ))}
-        </ul>
-      </section>
-    </article>
-  );
-}
 
 function Services() {
   const services = [

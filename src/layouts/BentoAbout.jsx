@@ -1,3 +1,6 @@
+import BentoCard from "../components/BentoCard";
+import TechBadge from "../components/TechBadge";
+
 const stack = ["React", "Vite", "CSS", "HTML", "JavaScript", "Tailwind"];
 
 export default function BentoAbout() {
@@ -9,7 +12,7 @@ export default function BentoAbout() {
       </header>
 
       <section className="bento-grid" aria-label="Información personal y técnica">
-        <article className="bento-card bento-large">
+        <BentoCard className="bento-large">
           <p className="card-label">Perfil</p>
           <h3>
             Desarrollo software con una mezcla de formación en sistemas, desarrollo web y
@@ -20,28 +23,28 @@ export default function BentoAbout() {
             Me interesa que la solución sea clara para quien la usa y para quien tendrá que
             mantenerla después.
           </p>
-        </article>
+        </BentoCard>
 
-        <article className="bento-card bento-stack">
+        <BentoCard className="bento-stack">
           <p className="card-label">Stack actual</p>
           <ul className="stack-list" aria-label="Stack tecnológico">
             {stack.map((technology) => (
               <li key={technology}>
-                <span className="tech-badge">{technology}</span>
+                <TechBadge>{technology}</TechBadge>
               </li>
             ))}
           </ul>
-        </article>
+        </BentoCard>
 
-        <article className="bento-card bento-location">
+        <BentoCard className="bento-location">
           <p className="card-label">Ubicación</p>
           <section className="location-map" aria-label="Cali, Colombia">
             <span className="map-dot" aria-hidden="true" />
             <span className="map-label">Cali, Colombia</span>
           </section>
-        </article>
+        </BentoCard>
 
-        <article className="bento-card bento-education">
+        <BentoCard className="bento-education">
           <p className="card-label">Estudios</p>
           <ul className="simple-list">
             <li>
@@ -57,14 +60,14 @@ export default function BentoAbout() {
               <span>SENA</span>
             </li>
           </ul>
-        </article>
+        </BentoCard>
 
-        <article className="bento-card bento-focus">
+        <BentoCard className="bento-focus">
           <p className="card-label">Enfoque</p>
           <p className="focus-line">Web</p>
           <p className="focus-line">Sistemas</p>
           <p className="focus-line">Infraestructura</p>
-        </article>
+        </BentoCard>
       </section>
     </section>
   );

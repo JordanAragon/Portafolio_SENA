@@ -41,11 +41,6 @@ a {
   text-decoration: none;
 }
 
-button,
-a {
-  -webkit-tap-highlight-color: transparent;
-}
-
 a:focus-visible {
   outline: 2px solid #f4f4f5;
   outline-offset: 4px;
@@ -57,8 +52,6 @@ h2,
 h3,
 ul,
 ol,
-dl,
-dd,
 figure {
   margin: 0;
 }
@@ -133,7 +126,8 @@ main,
 .hero-kicker,
 .eyebrow,
 .card-label,
-.experience-period {
+.experience-period,
+.detail-label {
   font: 600 0.72rem/1.2 "SFMono-Regular", Consolas, monospace;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -601,7 +595,7 @@ main,
   margin-top: 4rem;
 }
 
-.project-details > div {
+.project-details > article {
   display: grid;
   grid-template-columns: 6rem minmax(0, 1fr);
   gap: 1rem;
@@ -609,14 +603,7 @@ main,
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.project-details dt {
-  color: #71717a;
-  font: 600 0.7rem/1.2 "SFMono-Regular", Consolas, monospace;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.project-details dd {
+.project-details > article > p:last-child {
   color: #d4d4d8;
   line-height: 1.55;
 }
@@ -813,7 +800,7 @@ main,
     font-size: clamp(3.8rem, 18vw, 6rem);
   }
 
-  .project-details > div {
+  .project-details > article {
     grid-template-columns: 1fr;
     gap: 0.5rem;
   }

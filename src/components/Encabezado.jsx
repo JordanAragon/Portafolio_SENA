@@ -16,7 +16,7 @@ export default function Encabezado() {
 
       <a
         className="enlace-contacto"
-        href="mailto:"
+        href="#contacto"
         aria-label="Enviar correo electrónico"
       >
         Contacto
